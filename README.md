@@ -5,9 +5,8 @@
 
 ## Требования и запуск
 
-Нужен .NET SDK 10.0, стабильный выпуск. `global.json` допускает установленные
-feature bands .NET 10, включая 10.0.400. При первом восстановлении нужен доступ
-к NuGet. Внешняя БД и отдельный сервер для тестов не нужны.
+Нужен .NET SDK 10.0. `global.json` допускает установленные
+feature bands .NET 10, включая 10.0.400.
 
 Из корня решения:
 
@@ -19,7 +18,7 @@ dotnet run --project UserManagement.API --no-launch-profile --urls http://localh
 ```
 
 Сервис доступен по `http://localhost:5080/api/users`. При перезапуске приложения
-данные теряются. Для остановки нажмите Ctrl+C.
+данные теряются.
 
 Примеры запросов (curl; в Windows можно использовать `curl.exe`):
 
@@ -118,13 +117,3 @@ HTTP-запросов нет.
 ```shell
 dotnet test -c Release --logger "trx;LogFileName=UserManagement.trx" --results-directory artifacts/TestResults
 ```
-
-Custom middleware ошибок, интеграция логов с тестовым выводом, CI, Docker,
-авторизация и постоянная БД не добавлены.
-
-## Передача
-
-Исходники: https://github.com/Ainzak/sdet_test, ветка `main`.
-Архив `UserManagement.zip` содержит решение и документацию без результатов
-сборки, Git-метаданных и исходного документа задания. Архив не коммитится.
-Перед отправкой работодателю его можно переименовать с фамилией и инициалами.
